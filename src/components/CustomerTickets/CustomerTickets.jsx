@@ -83,8 +83,8 @@ const CustomerTickets = ({ ticketPromise, handleTicket, clickedTickets, handleRe
                         <p className='text-gray-500 text-sm mt-2'>Select a ticket to add to Task status</p>
                     ) : (
                         <div className='mt-2 space-y-2'>
-                            {clickedTickets.map((ticket, index) => (
-                                <div key={index} className="p-2  shadow-xl bg-gray-50 rounded">
+                            {clickedTickets.map((ticket) => (
+                                <div key={ticket.id} className="p-2  shadow-xl bg-gray-50 rounded">
                                     <h3 className='font-semibold'>{ticket.title}</h3>
                                     <button onClick={() => handleResolve(ticket)} className='bg-green-500 w-full rounded-md text-white mt-2'>Complete</button>                                </div>
                             ))}

@@ -22,10 +22,9 @@ function App() {
 
 
   const handleResolve = (ticket) => {
-    setResolvedTickets(prev => prev.filter(t => t.id !== ticket.id))
     setResolvedTickets(prev => [...prev, ticket])
+    setClickedTickets(prev => prev.filter(t => t.id !== ticket.id))
   }
-
 
   return (
     <div className='max-w-7xl mx-auto'>
