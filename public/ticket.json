@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "title": "Login Issue",
+    "description": "Customer cannot log into the account using correct credentials.",
+    "customer": "John Smith",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-01"
+  },
+  {
+    "id": 2,
+    "title": "Payment Failed",
+    "description": "Customer reported that payment failed during checkout.",
+    "customer": "Sarah Ahmed",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 3,
+    "title": "Password Reset",
+    "description": "Customer requested help resetting the account password.",
+    "customer": "Michael Brown",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "2026-02-28"
+  },
+  {
+    "id": 4,
+    "title": "Order Not Received",
+    "description": "Customer has not received the order after 10 days.",
+    "customer": "Emily Davis",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 5,
+    "title": "Account Verification",
+    "description": "Customer unable to verify email address.",
+    "customer": "David Wilson",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-02-27"
+  },
+  {
+    "id": 6,
+    "title": "Refund Request",
+    "description": "Customer requested refund for a cancelled order.",
+    "customer": "Sophia Lee",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2026-03-01"
+  },
+  {
+    "id": 7,
+    "title": "App Crash",
+    "description": "Mobile app crashes when opening settings.",
+    "customer": "Daniel Garcia",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-04"
+  },
+  {
+    "id": 8,
+    "title": "Profile Update Issue",
+    "description": "Customer unable to update profile information.",
+    "customer": "Olivia Martinez",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-02-26"
+  },
+  {
+    "id": 9,
+    "title": "Email Notifications",
+    "description": "Customer not receiving order confirmation emails.",
+    "customer": "James Anderson",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": 10,
+    "title": "Shipping Delay",
+    "description": "Customer reported delay in shipping update.",
+    "customer": "Ava Thompson",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-02-25"
+  },
+  {
+    "id": 11,
+    "title": "Coupon Not Working",
+    "description": "Customer cannot apply discount coupon.",
+    "customer": "William Taylor",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2026-03-03"
+  },
+  {
+    "id": 12,
+    "title": "Two Factor Authentication",
+    "description": "Customer unable to receive verification code.",
+    "customer": "Isabella Moore",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-04"
+  },
+  {
+    "id": 13,
+    "title": "Billing Address Update",
+    "description": "Customer requested help updating billing address.",
+    "customer": "Benjamin Clark",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-02-24"
+  },
+  {
+    "id": 14,
+    "title": "Subscription Cancel",
+    "description": "Customer wants to cancel monthly subscription.",
+    "customer": "Mia Rodriguez",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2026-03-01"
+  }
+]
