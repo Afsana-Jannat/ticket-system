@@ -1,9 +1,12 @@
 import React, { use } from 'react';
+
 import { CiCalendar } from "react-icons/ci";
 
-const CustomerTickets = ({ ticketPromise }) => {
+const CustomerTickets = ({ ticketPromise, handleTicket, clickedTickets, handleResolve, resolvedTickets }) => {
     const ticketData = use(ticketPromise)
-    console.log(ticketData)
+    // console.log(ticketData)
+
+
     return (
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
             <div className='col-span-2'>
@@ -14,7 +17,7 @@ const CustomerTickets = ({ ticketPromise }) => {
                 <div className='grid grid-cols-1 md:grid-cols-2  gap-6'>
                     {
                         ticketData.map(ticket =>
-                            <div key={ticket.id}>
+                            <div key={ticket.id} onClick={() => handleTicket(ticket)}>
                                 <div className="card mt-6 shadow-xl bg-gray-50 card-xs">
                                     <div className="card-body">
                                         <div className='flex justify-between'>
@@ -75,11 +78,32 @@ const CustomerTickets = ({ ticketPromise }) => {
             <div>
                 <div>
                     <h2 className='text-gray-600 font-bold'>Ticket Status</h2>
-                    <span className='text-gray-500 text-sm'>Select a ticket to add to Task status</span>
+
+                    {clickedTickets.length === 0 ? (
+                        <p className='text-gray-500 text-sm mt-2'>Select a ticket to add to Task status</p>
+                    ) : (
+                        <div className='mt-2 space-y-2'>
+                            {clickedTickets.map((ticket, index) => (
+                                <div key={index} className="p-2  shadow-xl bg-gray-50 rounded">
+                                    <h3 className='font-semibold'>{ticket.title}</h3>
+                                    <button onClick={() => handleResolve(ticket)} className='bg-green-500 w-full rounded-md text-white mt-2'>Complete</button>                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
                 <div>
                     <h2 className='text-gray-600 mt-6 font-bold'>Resolved Task</h2>
-                    <span className='text-gray-500 text-sm'>No resolved task yet.</span>
+                    {resolvedTickets.length === 0 ? (
+                        <span className='text-gray-500 text-sm'>No resolved task yet.</span>
+                    ) : (
+                        <div className='mt-2 space-y-2'>
+                            {resolvedTickets.map((ticket, index) => (
+                                <div key={index} className="p-2 shadow-xl bg-gray-50 rounded">
+                                    <h3 className='font-semibold'>{ticket.title}</h3>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
@@ -87,3 +111,4 @@ const CustomerTickets = ({ ticketPromise }) => {
 };
 
 export default CustomerTickets;
+

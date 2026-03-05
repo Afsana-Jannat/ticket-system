@@ -1,5 +1,5 @@
 
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import CustomerTickets from './components/CustomerTickets/CustomerTickets'
@@ -13,15 +13,32 @@ const fetchTickets = async () => {
 
 function App() {
   const ticketPromise = fetchTickets()
+  const [clickedTickets, setClickedTickets] = useState([])
+  const [resolvedTickets, setResolvedTickets] = useState([])
+
+  const handleTicket = (ticket) => {
+    setClickedTickets(prev => [...prev, ticket])
+  }
+
+
+  const handleResolve = (ticket) => {
+    setResolvedTickets(prev => prev.filter(t => t.id !== ticket.id))
+    setResolvedTickets(prev => [...prev, ticket])
+  }
+
 
   return (
     <div className='max-w-7xl mx-auto'>
       <Navbar></Navbar>
 
       {/* banner */}
-      <Banner></Banner>
+      <Banner clickedTickets={clickedTickets}
+        resolvedTickets={resolvedTickets}></Banner>
       <Suspense fallback={<span className='loading loading-spinner loading-xl'></span>}>
-        <CustomerTickets ticketPromise={ticketPromise}></CustomerTickets>
+        <CustomerTickets handleTicket={handleTicket}
+          handleResolve={handleResolve}
+          clickedTickets={clickedTickets} resolvedTickets={resolvedTickets}
+          ticketPromise={ticketPromise} ></CustomerTickets>
       </Suspense>
 
       <Footer></Footer>
@@ -30,3 +47,5 @@ function App() {
 }
 
 export default App
+
+

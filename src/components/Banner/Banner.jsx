@@ -1,5 +1,9 @@
 
-const Banner = () => {
+const Banner = ({ clickedTickets = [], resolvedTickets = [] }) => {
+
+
+    const totalCount = clickedTickets.length;
+    const resolvedCount = resolvedTickets.length
     return (
         <div className="flex flex-col sm:flex-row mt-8 gap-6">
             <div className="relative rounded-md w-full h-60 
@@ -10,7 +14,7 @@ const Banner = () => {
 
                 <div className="text-white absolute inset-0 flex flex-col items-center justify-center">
                     <h2>In-Progress</h2>
-                    <h2>0</h2>
+                    <h2 className="font-bold text-2xl">{totalCount}</h2>
                 </div>
 
                 <img src="/vic2.jpeg" alt="" className="absolute bottom-0 right-0 opacity-30 mix-blend-screen" />
@@ -24,7 +28,7 @@ const Banner = () => {
 
                 <div className="text-white absolute inset-0 flex flex-col items-center justify-center">
                     <h2>Resolved</h2>
-                    <h2>0</h2>
+                    <h2 className="font-bold text-2xl">{resolvedCount}</h2>
                 </div>
 
                 <img src="/vic2.jpeg" alt="" className="absolute bottom-0 right-0 opacity-30 mix-blend-screen" />
@@ -36,3 +40,4 @@ const Banner = () => {
 };
 
 export default Banner;
+
