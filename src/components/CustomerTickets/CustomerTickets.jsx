@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 
 import { CiCalendar } from "react-icons/ci";
+import Swal from 'sweetalert2';
 
 const CustomerTickets = ({ ticketPromise, handleTicket, clickedTickets, handleResolve, resolvedTickets }) => {
     const ticketData = use(ticketPromise)
@@ -86,7 +87,22 @@ const CustomerTickets = ({ ticketPromise, handleTicket, clickedTickets, handleRe
                             {clickedTickets.map((ticket) => (
                                 <div key={ticket.id} className="p-2  shadow-xl bg-gray-50 rounded">
                                     <h3 className='font-semibold'>{ticket.title}</h3>
-                                    <button onClick={() => handleResolve(ticket)} className='bg-green-500 w-full rounded-md text-white mt-2'>Complete</button>                                </div>
+                                    <button
+                                        onClick={() => {
+                                            handleResolve(ticket)
+
+                                            Swal.fire({
+                                                title: "Task Completed!",
+                                                text: "Ticket moved to Resolved section",
+                                                icon: "success",
+                                                confirmButtonText: "OK"
+                                            })
+
+                                        }}
+                                        className='bg-green-500 w-full rounded-md text-white mt-2'
+                                    >
+                                        Complete
+                                    </button>                                </div>
                             ))}
                         </div>
                     )}
