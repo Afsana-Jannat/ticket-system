@@ -18,7 +18,18 @@ const CustomerTickets = ({ ticketPromise, handleTicket, clickedTickets, handleRe
                 <div className='grid grid-cols-1 md:grid-cols-2  gap-6'>
                     {
                         ticketData.map(ticket =>
-                            <div key={ticket.id} onClick={() => handleTicket(ticket)}>
+                            <div key={ticket.id} onClick={() => {
+                                handleTicket(ticket)
+
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "Ticket added to Task Status",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }}>
                                 <div className="card mt-6 shadow-xl bg-gray-50 card-xs">
                                     <div className="card-body">
                                         <div className='flex justify-between'>
